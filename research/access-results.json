@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "chumba-casino",
+    "sourceUrl": "https://www.chumbacasino.com/",
+    "retrievedAt": "2026-10-08T20:01:04.769565+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "luckyland-slots",
+    "sourceUrl": "https://www.luckylandslots.com/",
+    "retrievedAt": "2026-10-08T20:01:04.770570+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "global-poker",
+    "sourceUrl": "https://globalpoker.com/",
+    "retrievedAt": "2026-10-08T20:01:04.771238+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "pulsz",
+    "sourceUrl": "https://www.pulsz.com/",
+    "retrievedAt": "2026-10-08T20:01:04.771850+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "wow-vegas",
+    "sourceUrl": "https://www.wowvegas.com/",
+    "retrievedAt": "2026-10-08T20:01:04.787989+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "stake-us",
+    "sourceUrl": "https://stake.us/",
+    "retrievedAt": "2026-10-08T20:01:04.790270+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "high-5-casino",
+    "sourceUrl": "https://high5casino.com/",
+    "retrievedAt": "2026-10-08T20:01:04.792645+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "mcluck",
+    "sourceUrl": "https://www.mcluck.com/",
+    "retrievedAt": "2026-10-08T20:01:04.794858+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "hello-millions",
+    "sourceUrl": "https://www.hellomillions.com/",
+    "retrievedAt": "2026-10-08T20:01:04.797830+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "crowncoins-casino",
+    "sourceUrl": "https://crowncoinscasino.com/",
+    "retrievedAt": "2026-10-08T20:01:04.798699+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "sportzino",
+    "sourceUrl": "https://sportzino.com/",
+    "retrievedAt": "2026-10-08T20:01:04.801362+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "zula-casino",
+    "sourceUrl": "https://www.zulacasino.com/",
+    "retrievedAt": "2026-10-08T20:01:04.803447+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "fortune-coins",
+    "sourceUrl": "https://www.fortunecoins.com/",
+    "retrievedAt": "2026-10-08T20:01:04.805405+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "realprize",
+    "sourceUrl": "https://www.realprize.com/",
+    "retrievedAt": "2026-10-08T20:01:04.809942+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "underdog",
+    "sourceUrl": "https://underdogfantasy.com/",
+    "retrievedAt": "2026-10-08T20:01:04.810478+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "prizepicks",
+    "sourceUrl": "https://www.prizepicks.com/",
+    "retrievedAt": "2026-10-08T20:01:04.810675+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "draftkings",
+    "sourceUrl": "https://sportsbook.draftkings.com/",
+    "retrievedAt": "2026-10-08T20:01:04.812758+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "fanduel",
+    "sourceUrl": "https://sportsbook.fanduel.com/",
+    "retrievedAt": "2026-10-08T20:01:04.815274+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "betmgm",
+    "sourceUrl": "https://sports.betmgm.com/",
+    "retrievedAt": "2026-10-08T20:01:04.817333+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "slug": "caesars",
+    "sourceUrl": "https://www.caesars.com/sportsbook",
+    "retrievedAt": "2026-10-08T20:01:04.819174+00:00",
+    "outcome": "blocked",
+    "httpStatus": null,
+    "notes": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Chumba Casino",
+    "slug": "chumba-casino",
+    "homepageUrl": "https://www.chumbacasino.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "LuckyLand Slots",
+    "slug": "luckyland-slots",
+    "homepageUrl": "https://www.luckylandslots.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Global Poker",
+    "slug": "global-poker",
+    "homepageUrl": "https://globalpoker.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Pulsz",
+    "slug": "pulsz",
+    "homepageUrl": "https://www.pulsz.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "WOW Vegas",
+    "slug": "wow-vegas",
+    "homepageUrl": "https://www.wowvegas.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Stake.us",
+    "slug": "stake-us",
+    "homepageUrl": "https://stake.us/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "High 5 Casino",
+    "slug": "high-5-casino",
+    "homepageUrl": "https://high5casino.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "McLuck",
+    "slug": "mcluck",
+    "homepageUrl": "https://www.mcluck.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Hello Millions",
+    "slug": "hello-millions",
+    "homepageUrl": "https://www.hellomillions.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "CrownCoins Casino",
+    "slug": "crowncoins-casino",
+    "homepageUrl": "https://crowncoinscasino.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Sportzino",
+    "slug": "sportzino",
+    "homepageUrl": "https://sportzino.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Zula Casino",
+    "slug": "zula-casino",
+    "homepageUrl": "https://www.zulacasino.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Fortune Coins",
+    "slug": "fortune-coins",
+    "homepageUrl": "https://www.fortunecoins.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "RealPrize",
+    "slug": "realprize",
+    "homepageUrl": "https://www.realprize.com/",
+    "category": "sweepstakes_casino"
+  },
+  {
+    "name": "Underdog",
+    "slug": "underdog",
+    "homepageUrl": "https://underdogfantasy.com/",
+    "category": "prediction"
+  },
+  {
+    "name": "PrizePicks",
+    "slug": "prizepicks",
+    "homepageUrl": "https://www.prizepicks.com/",
+    "category": "prediction"
+  },
+  {
+    "name": "DraftKings Sportsbook",
+    "slug": "draftkings",
+    "homepageUrl": "https://sportsbook.draftkings.com/",
+    "category": "sportsbook"
+  },
+  {
+    "name": "FanDuel Sportsbook",
+    "slug": "fanduel",
+    "homepageUrl": "https://sportsbook.fanduel.com/",
+    "category": "sportsbook"
+  },
+  {
+    "name": "BetMGM",
+    "slug": "betmgm",
+    "homepageUrl": "https://sports.betmgm.com/",
+    "category": "sportsbook"
+  },
+  {
+    "name": "Caesars Sportsbook",
+    "slug": "caesars",
+    "homepageUrl": "https://www.caesars.com/sportsbook",
+    "category": "sportsbook"
+  }
+]

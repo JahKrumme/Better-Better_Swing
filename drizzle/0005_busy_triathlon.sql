@@ -1,0 +1,1 @@
+ALTER TABLE "operational_actions" ADD CONSTRAINT "action_free_funding" CHECK ("operational_actions"."funding" @> '{"depositRequired":false,"purchaseRequired":false,"paidWagerRequired":false,"subscriptionRequired":false,"entryFeeRequired":false,"bankrollOrigin":"FREE_PROMOTIONAL"}'::jsonb);

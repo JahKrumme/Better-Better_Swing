@@ -1,0 +1,78 @@
+{
+  "reviewedAt": "2026-10-09T06:59:42.781978+00:00",
+  "documents": [
+    {
+      "sourceKey": "rules",
+      "sourceUrl": "https://high5casino.com/sweepstakes-rules/",
+      "retrievedAt": "2026-10-09T06:59:40.051982+00:00",
+      "excerpts": {
+        "geography": "2.1 The Sponsor Sweepstakes (the “Sweepstakes”) is open only to legal residents of the United States (excluding Arizona, California, Connecticut, Delaware, Idaho, Indiana, Iowa, Kentucky, Louisiana, Maine, Maryland, Michigan, Montana, Nevada, New Jersey, New York, Pennsylvania, Rhode Island, Tennessee, Washington and West Virginia, and where otherwise prohibited) who are twenty-one (21) years of age or older at the time of entry. Void where prohibited by law.",
+        "freeAccount": "6.1 To participate, You must have an active account with H5G (“User Account”). If you do not have a User Account, you can create one free of charge at https:high5casino.com/ (the “Site”). To enter the Sweepstakes, a Participant must access the Site and sign in to their User Account.",
+        "daily": "6.2.1 Receive Sweeps Coins by Collecting a Daily Bonus: You will be awarded a set number of free Sweeps Coins the first time You log into Your User Account each day.",
+        "automation": "7.5 The use of automated or systematic methods of play to win and/or redeem Sweeps Coins for a Prize is strictly prohibited. Utilizing methods such as utilizing multiple accounts and identities and other collusive methods are not permitted and may result in account closure and forfeiture of Sweeps Coins, in the sole discretion of Sponsor.",
+        "playthrough": "7.7 Sweeps Coins obtained by any method in Section 6 are not immediately available for redemption of a Prize and must be used at least once in a Sweeps Coins game before they shall be considered eligible toward a Prize redemption request. Sponsor may, in its sole discretion, require that any Sweeps Coins allocated to a Participant under any method in Section 6 be used more than one (1) time in any combination of Sweeps Coins games before they are eligible to be redeemed.",
+        "minimum": "8.2 You must accumulate a minimum of fifty (50) Sweeps Coins eligible to be redeemed in order to submit a request for a non-cash prize. You must accumulate a minimum of one hundred (100) Sweeps Coins eligible to be redeemed in order to submit a request for a cash prize. For purposes of redemption only, one (1) Sweeps Coin will be redeemable for one dollar ($1.00) in Prize. Sweeps Coins possess no monetary value until redeemed. To redeem Sweeps Coins for a Prize, You must click on the redeem button on the Website and follow the redemption instructions. If you require assistance with the redemption process, please contact Customer Support at support@high5casino.com.",
+        "documentDigest": "e72b2d9b2661b82236eb3ab9cdd2340441ff436ed8ecd21e5755ca4b0bc9bb60"
+      },
+      "fingerprint": "49b9a7fe3c11acaa3c95085bc3e9b456efdc8b345a115235000668200013dafd"
+    },
+    {
+      "sourceKey": "free",
+      "sourceUrl": "https://high5casino.com/helpcenter/how-to-get-free-sweeps-coins/",
+      "retrievedAt": "2026-10-09T06:59:40.958287+00:00",
+      "excerpts": {
+        "signup": "Sign-up bonus: When you create a new account, you’ll receive 55 Sweeps Coins to start playing.",
+        "daily": "Daily Harvest: Log in daily to collect your Daily Harvest of free Sweeps Coins, which will be credited to your account.",
+        "documentDigest": "ac464e22cdbe3ef82fefd156517b5b302da9d63a6e3edb3d7c07733e24eb4893"
+      },
+      "fingerprint": "d7dc72273e60ebbdd21c68e6a8b51d01e47a7b0be7cc1c2f19d3710d6f225aa9"
+    },
+    {
+      "sourceKey": "redemption",
+      "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+      "retrievedAt": "2026-10-09T06:59:41.601111+00:00",
+      "excerpts": {
+        "prizeout": "Prizeout – Digital Cards Prizeout is a redemption service that lets players convert Sweeps Coins into digital cards from major brands like Amazon, Target, and Starbucks. Eligibility: It does not require a prior purchase and is available to all verified players. Limits: Each redemption must be at least $50 and not exceed $250 per transaction. Processing Time: Digital cards are typically delivered instantly or within a few hours via email. Best for: Casual players or those who prefer shopping rewards over direct real prizes. Tip: Prizeout redemptions are a popular alternative for users looking for instant, low-friction reward options. ",
+        "trustly": "Trustly – Bank Transfer – ACH & EFT Trustly enables players to redeem their SC directly to a linked U.S. bank account via ACH or Electronic Funds Transfer (EFT). Eligibility: No prior purchase with Trustly is required to use this method. Limits: Redemptions up to $10,000 are supported. Processing Time: Approved redemptions typically arrive within 3–5 business days. Best for: U.S. players who prefer traditional bank transfers for security and convenience. Tip: Trustly also supports purchases, so it’s a flexible option for buying coins and redeeming winnings. ",
+        "menuCondition": "Those options will appear if you’ve used Skrill or Trustly to make purchases.",
+        "defaultMethod": "If not, Prizeout is available to all users by default.",
+        "skrill": "Skrill – E-Wallet Redemption Skrill is one of the primary redemption methods on High 5 Casino. It’s a secure e-wallet that allows you to receive money digitally and transfer it to your bank or card. Eligibility: To redeem the option, you must have previously purchased using Skrill. Without a prior Skrill transaction, the option will not be visible in your options. Limits: Redemptions via Skrill can be made up to $10,000 per transaction. Processing Time: Once approved, funds are typically delivered to your Skrill account within 1–2 business days, often sooner. Best for: Players who want fast, direct real prizes delivery to a digital wallet. Tip: If you plan to redeem via Skrill, make your first purchase using Skrill to activate this method in your account. ",
+        "documentDigest": "baec774849c2b1056cbe7cdba9e3fd7d9d692b9dda9fd6380eaadd1d86a30f90"
+      },
+      "fingerprint": "1fb4406ec3a01eca61f3fcfdd468543555744f2957eda7e3e450e5df3f418ea9"
+    },
+    {
+      "sourceKey": "playthrough",
+      "sourceUrl": "https://high5casino.com/helpcenter/playthrough/",
+      "retrievedAt": "2026-10-09T06:59:42.171800+00:00",
+      "excerpts": {
+        "example": "With a 3x goal, for example, each SC goes further by giving you multiple rounds of play before becoming eligible for redemption.",
+        "illustration": "Picture this: you’ve been given 30 Sweeps Coins, and the playthrough goal is 3×.",
+        "requirements": "Once you’ve hit both the redemption and playthrough targets, submit a request.",
+        "documentDigest": "310572f0338f3b03b4f4445af8711d0199b544c5878a18a7321addcd5bb216ca"
+      },
+      "fingerprint": "1979c07098eb8c29184feba364a1fbbaaa35bbe4db27c2cdd207f112cce9aa21"
+    },
+    {
+      "sourceKey": "games",
+      "sourceUrl": "https://high5casino.com/games/",
+      "retrievedAt": "2026-10-09T06:11:56.471268+00:00",
+      "excerpts": {
+        "catalogue": "1,500+ Options: We’ve got an ever-growing selection—everything from classic spins to brand-new adventures—so you’ll never run out of games to explore."
+      },
+      "fingerprint": "97e12646aee295df42adf858089a792a4ebf1c6db424e1cfb1092556cfb1d414"
+    },
+    {
+      "sourceKey": "terms",
+      "sourceUrl": "https://high5casino.com/terms-of-use/",
+      "retrievedAt": "2026-10-09T06:59:42.781978+00:00",
+      "excerpts": {
+        "policy": "3.1.7 You will not be involved in any fraudulent or other unlawful activity in relation to Your participation in any of the Games and You will not use any software-assisted methods or techniques (including but not limited to “bots” designed to play automatically) for Your participation in any of the Games. We reserve the right to invalidate any participation in the event of such behavior and/or suspend or terminate Your User Account.",
+        "documentDigest": "610736ebae0d7bc44b6931c82b392f608cfb3139fd7de30a58ff6345e0ce77f1"
+      },
+      "fingerprint": "c51c08ac03638d20bdb2a60f6ba1036c92ccf65ae8a001d5e513cbaafd40b954"
+    }
+  ],
+  "games": [],
+  "notes": "Manually reviewed Phase 4 baseline. Trustly help is internally inconsistent; Prizeout explicitly supports no prior purchase. Public catalogue supplies no complete verified game terms. Exact every-four-hour currency/amount remain UNKNOWN."
+}

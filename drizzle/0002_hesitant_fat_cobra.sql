@@ -1,0 +1,2 @@
+DROP INDEX "platform_source_attempt";--> statement-breakpoint
+CREATE UNIQUE INDEX "platform_source_attempt" ON "platform_sources" USING btree ("platformId","sourceUrl","retrievedAt","field",coalesce("normalizedValue", ''));

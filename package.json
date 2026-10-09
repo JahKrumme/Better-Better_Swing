@@ -1,0 +1,53 @@
+{
+  "name": "free-money-finder",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --env-file-if-exists=.env --import tsx scripts/migrate.ts",
+    "db:seed": "node --env-file-if-exists=.env --import tsx scripts/seed.ts",
+    "db:smoke": "node --env-file-if-exists=.env --import tsx scripts/smoke.ts",
+    "local:env": "node scripts/init-env.mjs",
+    "research:import": "node --env-file-if-exists=.env --import tsx scripts/import-research.ts",
+    "test:integration": "node --env-file-if-exists=.env ./node_modules/vitest/vitest.mjs run --config vitest.integration.config.ts",
+    "test:http": "python3 scripts/http-smoke.py",
+    "operations:refresh": "node --env-file-if-exists=.env --import tsx scripts/init-operations.ts",
+    "high5:init": "node --env-file-if-exists=.env --import tsx scripts/high5.ts",
+    "high5:sync": "node --env-file-if-exists=.env --import tsx scripts/high5.ts --sync",
+    "high5:review": "node --env-file-if-exists=.env --import tsx scripts/high5.ts --review",
+    "test:http:high5": "python3 scripts/high5-http-smoke.py"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.3",
+    "next": "^16.4.0",
+    "pg": "^8.23.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.0",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3"
+  },
+  "type": "module"
+}

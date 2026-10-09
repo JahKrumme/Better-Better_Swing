@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "high5_source_capture" ON "high5_public_sources" USING btree ("platformId","sourceKey","retrievedAt");
