@@ -1,0 +1,2 @@
+ALTER TABLE "action_policy_evidence" DROP CONSTRAINT "action_policy_stage";--> statement-breakpoint
+ALTER TABLE "action_policy_evidence" ADD CONSTRAINT "action_policy_stage" CHECK ("action_policy_evidence"."stage" in ('DISCOVERY','AVAILABILITY','BALANCE','CLAIM','GAMEPLAY','REDEMPTION'));

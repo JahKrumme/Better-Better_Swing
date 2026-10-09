@@ -161,3 +161,18 @@ describe("evidence-first zero-out-of-pocket eligibility", () => {
     );
   });
 });
+
+describe("public material-change gate", () => {
+  it("retains free evidence but withholds eligibility pending independent re-verification", () => {
+    const offer = free();
+    expect(evaluateOfferEligibility(offer, profile, now).eligible).toBe(true);
+    const result = evaluateOfferEligibility(
+      { ...offer, publicReviewRequired: true },
+      profile,
+      now,
+    );
+    expect(result.eligible).toBe(false);
+    expect(result.status).toBe("Needs Verification");
+    expect(result.warnings.join(" ")).toContain("re-verification");
+  });
+});

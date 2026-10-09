@@ -24,7 +24,16 @@
     "high5:init": "node --env-file-if-exists=.env --import tsx scripts/high5.ts",
     "high5:sync": "node --env-file-if-exists=.env --import tsx scripts/high5.ts --sync",
     "high5:review": "node --env-file-if-exists=.env --import tsx scripts/high5.ts --review",
-    "test:http:high5": "python3 scripts/high5-http-smoke.py"
+    "test:http:high5": "python3 scripts/high5-http-smoke.py",
+    "product:init": "node --env-file-if-exists=.env --import tsx scripts/init-product.ts",
+    "operations:run": "node --env-file-if-exists=.env --import tsx scripts/operations-runner.ts",
+    "app:start": "node scripts/app-local.mjs",
+    "app:background": "node scripts/app-local.mjs --background",
+    "app:stop": "node scripts/app-local.mjs --stop",
+    "research:refresh": "python3 scripts/public-research-fetch.py && pnpm research:captures",
+    "research:captures": "node --env-file-if-exists=.env --import tsx scripts/import-public-captures.ts",
+    "test:http:consumer": "python3 scripts/consumer-http-smoke.py",
+    "test:startup": "node scripts/local-startup-smoke.mjs"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.3",

@@ -66,6 +66,7 @@ export type EligibilityOffer = Record<MoneyField, boolean | null> & {
   fixture: boolean;
   researchVersion?: number;
   high5PublicReviewRequired?: boolean;
+  publicReviewRequired?: boolean;
   entryFeeRequired?: boolean | null;
   offerType?: string;
 } & AMOE;
@@ -88,6 +89,10 @@ export function evaluateOfferEligibility(
   const reasons: string[] = [];
   const warnings: string[] = [];
   const valueWarnings: string[] = [];
+  if (offer.publicReviewRequired)
+    warnings.push(
+      "Public offer terms changed: primary-source re-verification required.",
+    );
   if (offer.high5PublicReviewRequired)
     warnings.push(
       "High 5 public terms changed: primary-source re-verification required.",

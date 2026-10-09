@@ -1,5 +1,53 @@
 # Free Money Finder
 
+A local personal app that finds genuinely free promotional rewards, tracks the balances you actually record, and puts redemption first. Your money contributed stays **$0**: no deposits, purchases, fees, subscriptions or paid qualification.
+
+## Run Free Money Finder on your Mac
+
+Install **Node 24+, pnpm 11.19+ and Docker Desktop**, then:
+
+```sh
+git clone https://github.com/JahKrumme/Better-Better_Swing.git
+cd Better-Better_Swing
+pnpm install --frozen-lockfile
+pnpm app:start
+```
+
+Open the loopback URL printed by startup. It safely creates local configuration if needed, starts PostgreSQL, applies migrations, preserves saved records, builds the production app and starts its local background runner. Confirm age eligibility on the first dashboard if no age is configured. Ctrl+C stops the app and runner while preserving data.
+
+To keep it running after closing the terminal:
+
+```sh
+pnpm app:background
+pnpm app:stop
+```
+
+Port conflicts are supported: `APP_PORT=3010 LOCAL_DB_PORT=5438 pnpm app:start`. Defaults choose available ports; existing app database ports are preserved. See [local startup, shutdown and troubleshooting](docs/LOCAL_OPERATIONS.md).
+
+## What you see
+
+**Home** shows free promotional balances, redeemable value, actual receipts and your $0 contribution, with a short Needs you list. Each platform has one official button and a quick update. **Casinos** and **Sportsbooks** stay separate. **History** describes what actually happened. **Advanced** preserves the detailed research, accounting, controls, experiments and isolated fictional simulation.
+
+Current verified free platforms for the Kansas user aged at least 21: **High 5 Casino** and **RealPrize**. Published rewards are not account balances; unknown values stay unknown. Currently no sportsbook credit satisfies the verified $0 rules. Fliff is excluded.
+
+## What is automatic
+
+While the local app runs, the background worker checks local schedules and evidence, recalculates statuses and persists attention items. GET MY FREE MONEY runs the same checks on demand. No real private platform capability currently has both official authorization and a supported executor, so it makes no automatic claims or wagers. Public research has explicit manual refresh tools and records failures honestly.
+
+## What still requires you
+
+Open a platform to check/claim any available free reward, then enter its actual balance and received amount in Quick update. Use unknown if you cannot confirm a value. Record manual play only after it happened. When a redeemable balance exists, the app says **STOP PLAYING / REDEEM NOW**. Redeem on the platform, then record the request and actual receipt here. No platform password, cookie or identity document belongs in this app.
+
+This app is for loopback personal use. Production startup uses `127.0.0.1`; keep it local. Checks stop when the app/computer stops. No OS notifications or third-party analytics are enabled.
+
+See [product behavior and limitations](docs/PRODUCT_COMPLETE.md), [local operations](docs/LOCAL_OPERATIONS.md), [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [automation policy](docs/AUTOMATION_POLICY.md).
+
+## Historical implementation notes
+
+The following records describe the Phases 0–4 implementation. Current consumer routes/startup above supersede older development and navigation instructions; the underlying historical tools remain available in Advanced.
+
+### Historical Free Money Finder
+
 A local personal research foundation for $0-out-of-pocket promotional rewards. Research and real published programs are separate from **fictional development fixtures**, and Fliff is always excluded. An explicit bounded High 5 public-source research sync is available. No external login, automated claims or gameplay executor is implemented.
 
 ## Stack and layout

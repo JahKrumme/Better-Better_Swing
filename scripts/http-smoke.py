@@ -29,7 +29,7 @@ def sql(q):return subprocess.check_output(['docker','compose','exec','-T','db','
 # A populated research dataset replaces the old empty real-offer baseline.
 real_count=int(sql('SELECT count(*) FROM offers o JOIN platforms p ON p.id=o."platformId" WHERE NOT o.fixture AND NOT p.fixture'))
 amoe_count=int(sql("""SELECT count(*) FROM offers o JOIN platforms p ON p.id=o."platformId" WHERE NOT o.fixture AND NOT p.fixture AND (o."offerType"='amoe' OR o."amoeAvailable"=true)"""))
-for path,expected,count in [('/', 'FREE MONEY AVAILABLE TODAY',0),('/overview', 'What can you collect without spending?',real_count+amoe_count+4),('/casinos','Free-value engine',4),('/sportsbook','SPORTS BETTING',0),('/bankroll','PROMOTIONAL BANKROLL LEDGER',0),('/demo','SIMULATION ONLY',0),('/offers','Real offer research',real_count),('/offers?dataset=fixtures','Fictional development fixtures',5),('/offers?dataset=fixtures&filter=daily','Free daily promotional coin',1),('/platforms','Platform research registry',21),('/platforms?dataset=fixtures','Fictional platform fixtures',2),('/claims','No manual claims recorded.',0),('/earnings','Actual redeemed value',0),('/research','Append source evidence',0)]:
+for path,expected,count in [('/advanced/today', 'FREE MONEY AVAILABLE TODAY',0),('/overview', 'What can you collect without spending?',real_count+amoe_count+4),('/advanced/casinos','Free-value engine',4),('/advanced/sportsbook','SPORTS BETTING',0),('/bankroll','PROMOTIONAL BANKROLL LEDGER',0),('/demo','SIMULATION ONLY',0),('/offers','Real offer research',real_count),('/offers?dataset=fixtures','Fictional development fixtures',5),('/offers?dataset=fixtures&filter=daily','Free daily promotional coin',1),('/platforms','Platform research registry',21),('/platforms?dataset=fixtures','Fictional platform fixtures',2),('/claims','No manual claims recorded.',0),('/earnings','Actual redeemed value',0),('/research','Append source evidence',0)]:
  p=get(path);assert expected in ' '.join(p.text) and p.articles==count,(path,p.articles);print('PASS',path)
 real=get('/offers');assert 'Free registration component' in ' '.join(real.text)
 for title in json.loads(sql('SELECT json_agg(title) FROM offers WHERE fixture')):
@@ -53,13 +53,13 @@ try:
  for field in fields:values['evidence_'+field]='Synthetic source support — not real public evidence.'
  response=post('/research',['title','platformId'],values);assert 'Offer and evidence saved.' in response
  oid=sql(f'''SELECT id FROM offers WHERE "platformId"='{pid}' ''');assert oid
- post('/',[],{})
+ post('/advanced/today',[],{})
  # This process requires a synthetic adult server profile for eligible test records.
  response=post('/offers',['offerId','received'],dict(offerId=oid,received='10'));assert 'Manual claim recorded.' in response
  assert sql(f'''SELECT count(*) FROM claims WHERE "offerId"='{oid}' AND "claimState"='CLAIMED' ''')=='1'
  assert sql(f'''SELECT count(*) FROM claims WHERE "offerId"='{oid}' AND "claimState"='UNCLAIMED' ''')=='1'
  response=post('/offers',['offerId','received'],dict(offerId=oid,received='10'));assert 'already been claimed' in response
- post('/',[],{})
+ post('/advanced/today',[],{})
  aid=sql(f"SELECT id FROM bankroll_accounts WHERE \"platformId\"='{pid}' AND NOT demo");assert aid
  assert sql(f"SELECT count(*) FROM bankroll_ledger WHERE \"accountId\"='{aid}' AND \"eventType\"='FREE_REWARD_RECEIVED'")=='1'
  def ledger(kind,amount,category,**extra):
@@ -67,7 +67,7 @@ try:
   return post('/bankroll',['accountId','eventType'],values)
  assert 'Manual ledger event recorded' in ledger('PROMOTIONAL_ACTIVATED','10','PLAYABLE')
  assert 'Manual ledger event recorded' in ledger('BECAME_REDEEMABLE','5','PLAYABLE')
- post('/',[],{});assert 'STOP PLAYING' in ' '.join(get('/bankroll').text)
+ post('/advanced/today',[],{});assert 'STOP PLAYING' in ' '.join(get('/bankroll').text)
  assert 'Manual ledger event recorded' in ledger('REDEMPTION_REQUESTED','5','REDEEMABLE')
  rid=sql(f"SELECT id FROM bankroll_ledger WHERE \"accountId\"='{aid}' AND \"eventType\"='REDEMPTION_REQUESTED'")
  assert 'Manual ledger event recorded' in ledger('REDEMPTION_COMPLETED','5','REDEEMED',relatedEventId=rid,actualCashAmount='2.50')

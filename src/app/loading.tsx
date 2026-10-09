@@ -1,3 +1,3 @@
 export default function Loading() {
-  return <p role="status">Loading research records…</p>;
+  return <p role="status">Loading your dashboard…</p>;
 }

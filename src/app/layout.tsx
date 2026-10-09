@@ -2,7 +2,7 @@ import Link from "next/link";
 import "./globals.css";
 export const metadata = {
   title: "Free Money Finder",
-  description: "Evidence-first personal promotional reward research",
+  description: "Your free rewards and balances in one place",
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/" className="text-xl font-bold tracking-tight">
                 Free Money Finder{" "}
                 <span className="ml-2 text-xs font-normal muted">
-                  PERSONAL RESEARCH
+                  PERSONAL USE
                 </span>
               </Link>
               <span className="rounded-full bg-green-100 px-3 py-1 text-sm">
@@ -26,18 +26,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               className="mt-6 flex flex-wrap gap-6 text-sm font-semibold"
             >
               {[
-                ["/", "Today"],
-                ["/high5", "High 5"],
-                ["/overview", "Overview"],
-                ["/casinos", "Casinos"],
-                ["/sportsbook", "Sports betting"],
-                ["/bankroll", "Bankroll"],
-                ["/demo", "Simulation"],
-                ["/offers", "Offers"],
-                ["/platforms", "Platforms"],
-                ["/earnings", "Earnings"],
-                ["/claims", "Manual claims"],
-                ["/research", "Admin / Research"],
+                ["/", "HOME"],
+                ["/casinos", "CASINOS"],
+                ["/sportsbook", "SPORTSBOOKS"],
+                ["/history", "HISTORY"],
+                ["/advanced", "ADVANCED"],
               ].map(([href, name]) => (
                 <Link key={href} href={href} className="hover:underline">
                   {name}
@@ -46,16 +39,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </nav>
           </div>
         </header>
-        <main className="mx-auto max-w-7xl px-5 py-8">
-          <aside className="mb-8 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm">
-            <strong>Evidence first.</strong> Only current primary evidence can
-            establish a real $0 opportunity. Promotional currency is not cash.
-            Claims are manual; fictional fixtures are available separately.
-          </aside>
-          {children}
-        </main>
+        <main className="mx-auto max-w-7xl px-5 py-8">{children}</main>
         <footer className="mx-auto max-w-7xl px-5 py-8 text-sm muted">
-          Unknown terms stay unverified. Fliff is excluded. Local use only.
+          Free promotional currency is not cash. Local use · Central time.
         </footer>
       </body>
     </html>

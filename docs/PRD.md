@@ -1,5 +1,7 @@
 # Free Money Finder — current Phase 3 product direction
 
+Current consumer behavior and production local operations are documented in [Product completion](PRODUCT_COMPLETE.md) and [Local operations](LOCAL_OPERATIONS.md). Historical implementation sections below are retained for context.
+
 A personal Kansas/US application with two engines sharing evidence, a strict $0 guard and local operational bookkeeping. Preserve all Phase 0–2B records. Fliff is permanently excluded. User cash contributed must remain exactly zero; never purchase, deposit, subscribe, pay an entry fee or replenish a loss.
 
 ## Engine A — sweepstakes casino free value
@@ -66,3 +68,7 @@ Phase 2 succeeds as research infrastructure when source access is unavailable, b
 ## Phase 4 — High 5 only
 
 High 5 is the first registered real adapter, with six manual capabilities and unavailable gameplay execution. Today and `/high5` provide manual free-only account observations, variable-currency four-hour reward checks, play/result recording, operator-confirmed redeemability and redemption-first tasks. `/high5/experiment` reports actual observations, separate GC/SC/actual proceeds and conservative projections after seven elapsed and observed days. Public-source sync is an explicit bounded official read; changed critical facts block affected offers until deliberate primary-source re-verification. No new platform, external login/claim/play/redemption executor or Phase 5 work is included. Details: [PHASE_4_HIGH5.md](PHASE_4_HIGH5.md), [HIGH5_EXPERIMENT.md](HIGH5_EXPERIMENT.md).
+
+## Consumer completion
+
+The primary experience is Home with separate issuer/currency balances, Needs you, official buttons and minimal free-only account updates. Navigation is Home, Casinos, Sportsbooks, History and Advanced. Redemption takes precedence over play. No verified $0 sportsbook credits currently exist. See PRODUCT_COMPLETE.md for the completed workflow and LOCAL_OPERATIONS.md for normal production local use.

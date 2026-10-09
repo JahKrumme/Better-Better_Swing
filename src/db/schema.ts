@@ -179,6 +179,7 @@ export const offers = pgTable("offers", {
   valueEvidenceUrl: text(),
   recurrenceTimezone: text().notNull().default("America/Chicago"),
   recurrenceAnchor: timestamp({ withTimezone: true }),
+  publicReviewRequired: boolean().notNull().default(false),
   high5PublicReviewRequired: boolean().notNull().default(false),
 });
 export const offerEvidence = pgTable("offer_evidence", {
@@ -297,7 +298,7 @@ export const actionPolicyEvidence = pgTable(
   (t) => [
     check(
       "action_policy_stage",
-      sql`${t.stage} in ('DISCOVERY','CLAIM','GAMEPLAY','REDEMPTION')`,
+      sql`${t.stage} in ('DISCOVERY','AVAILABILITY','BALANCE','CLAIM','GAMEPLAY','REDEMPTION')`,
     ),
     check(
       "action_policy_decision",
@@ -517,4 +518,107 @@ export const high5Redemptions = pgTable("high5_redemptions", {
   observationId: uuid()
     .notNull()
     .references(() => high5Updates.id),
+});
+
+// Consumer snapshots and runtime state reuse the existing ledger and policies.
+export const accountSnapshots = pgTable("account_snapshots", {
+  sequence: bigserial({ mode: "number" }).notNull().unique(),
+  id: uuid().primaryKey().defaultRandom(),
+  accountId: uuid()
+    .notNull()
+    .references(() => bankrollAccounts.id, { onDelete: "cascade" }),
+  submissionKey: text().notNull().unique(),
+  occurredAt: timestamp({ withTimezone: true }).notNull(),
+  payload: jsonb().$type<import("@/domain/product").QuickUpdate>().notNull(),
+  instanceKey: text().notNull(),
+  operation: text()
+    .$type<"UPDATE" | "PLAY" | "REDEMPTION">()
+    .notNull()
+    .default("UPDATE"),
+  sourceKind: text().notNull().default("USER_OBSERVATION"),
+  detail: jsonb().$type<Record<string, unknown>>().notNull().default({}),
+});
+export const accountRedemptions = pgTable("account_redemptions", {
+  id: uuid().primaryKey().defaultRandom(),
+  accountId: uuid()
+    .notNull()
+    .references(() => bankrollAccounts.id, { onDelete: "cascade" }),
+  key: text().notNull().unique(),
+  requestedSC: numeric({ precision: 12, scale: 2 }).notNull(),
+  receivedUSD: numeric({ precision: 12, scale: 2 }),
+  requestedAt: timestamp({ withTimezone: true }).notNull(),
+  completedAt: timestamp({ withTimezone: true }),
+  method: text().notNull(),
+  status: text()
+    .$type<"REQUESTED" | "COMPLETED" | "CANCELLED" | "FAILED">()
+    .notNull(),
+  requestEventId: uuid().notNull(),
+  completionEventId: uuid(),
+});
+export const productRuns = pgTable("product_runs", {
+  id: uuid().primaryKey().defaultRandom(),
+  startedAt: timestamp({ withTimezone: true }).notNull(),
+  finishedAt: timestamp({ withTimezone: true }),
+  trigger: text().$type<"MANUAL" | "BACKGROUND">().notNull(),
+  outcome: text().$type<"RUNNING" | "COMPLETE" | "FAILED">().notNull(),
+  result: jsonb()
+    .$type<{
+      collected: { platform: string; amount: string; currency: string }[];
+      needsYou: string[];
+      nothing: string[];
+      publicReads: number;
+      failures: string[];
+    }>()
+    .notNull(),
+  diagnostic: text(),
+});
+export const localRuntime = pgTable("local_runtime", {
+  key: text().primaryKey(),
+  owner: text(),
+  enabled: boolean().notNull().default(false),
+  heartbeatAt: timestamp({ withTimezone: true }),
+  lastRunAt: timestamp({ withTimezone: true }),
+  nextRunAt: timestamp({ withTimezone: true }),
+});
+export const attentionItems = pgTable("attention_items", {
+  key: text().primaryKey(),
+  platformId: uuid()
+    .notNull()
+    .references(() => platforms.id, { onDelete: "cascade" }),
+  kind: text().notNull(),
+  title: text().notNull(),
+  priority: integer().notNull(),
+  active: boolean().notNull().default(true),
+  updatedAt: timestamp({ withTimezone: true }).notNull(),
+});
+export const publicDocuments = pgTable(
+  "public_documents",
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    platformId: uuid()
+      .notNull()
+      .references(() => platforms.id, { onDelete: "cascade" }),
+    sourceUrl: text().notNull(),
+    retrievedAt: timestamp({ withTimezone: true }).notNull(),
+    fingerprint: text(),
+    outcome: text()
+      .$type<"READABLE" | "ACCESS_FAILED" | "REVIEW_REQUIRED">()
+      .notNull(),
+    excerpt: text().notNull(),
+    notes: text().notNull(),
+  },
+  (t) => [
+    uniqueIndex("public_document_capture").on(
+      t.platformId,
+      t.sourceUrl,
+      t.retrievedAt,
+    ),
+  ],
+);
+export const userSettings = pgTable("user_settings", {
+  key: text().primaryKey(),
+  profile: jsonb()
+    .$type<{ age: number | null; country: string; state: string }>()
+    .notNull(),
+  updatedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
 });

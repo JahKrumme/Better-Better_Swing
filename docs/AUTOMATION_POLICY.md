@@ -1,5 +1,7 @@
 # Action-specific automation policy
 
+Current consumer behavior and production local operations are documented in [Product completion](PRODUCT_COMPLETE.md) and [Local operations](LOCAL_OPERATIONS.md). Historical implementation sections below are retained for context.
+
 Four independently reviewed scopes: DISCOVERY, CLAIM, GAMEPLAY, REDEMPTION. Checking reward/balance/playthrough/redemption status is passive DISCOVERY; actually claiming, playing or requesting a prize requires its corresponding scope. Permission in one scope never grants another. Adapters must also enable each individual capability, so a read endpoint does not enable a claim or play endpoint.
 
 | Current platform | Discovery | Claim      | Gameplay   | Redemption |
@@ -27,3 +29,7 @@ The earlier “no real adapters” statement describes Phase 3. High5Adapter is 
 The explicit public-sync button/CLI reads six fixed official public HTTPS documents without authentication or retries. It is a user-triggered research workflow, not unattended monitoring or permission to access account data. Fresh matching primary snapshots may refresh prohibition evidence, never grant permission. Material changes require curator re-verification; unknown/failed/stale sources cannot enable external actions. Manual observations remain USER_OBSERVATION.
 
 All login/signup, inbox/balance checks, claims, bonus/game verification, gameplay, KYC and actual redemption remain outside automation. Local observation saving, ledger reconciliation, task generation and metric calculation are internal bookkeeping. The exact official authorization/interface requirements for each manual capability are listed in [PHASE_4_HIGH5.md](PHASE_4_HIGH5.md). No browser concealment, CAPTCHA/bot/security/geo/KYC circumvention, deposits, coin purchases or user-funded bankroll are supported.
+
+## Current consumer execution policy
+
+Every automatic capability requires its own current affirmative official permission and a supported implementation. Discovery permission cannot authorize private availability/balance reads. All current real integrations remain MANUAL; the runtime performs local checks. Mock authorized branches exist only in tests. No real automatic wager or redemption interface is implemented. GET MY FREE MONEY cannot override UNKNOWN/PROHIBITED/unsupported capabilities. Explicit public research is bounded, unauthenticated and does not bypass blocked sources. The persisted local attention queue sends no OS notifications. See PRODUCT_COMPLETE.md and LOCAL_OPERATIONS.md.

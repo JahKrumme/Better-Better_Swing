@@ -36,3 +36,6 @@ database-dumps/
 *.sql.gz
 *.sql.bz2
 *.sql.xz
+
+# Local app supervisor state and logs
+.fmf/

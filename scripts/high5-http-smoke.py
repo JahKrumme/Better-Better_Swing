@@ -24,7 +24,7 @@ def post(field,values):
  f=next(f for f in get('/high5').forms if field in f['fields']);values=dict(values,accountId=account,submissionKey=str(uuid.uuid4()));boundary='High5'+uuid.uuid4().hex
  chunks=[f'--{boundary}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n'.encode() for k,v in [(k,v) for k,v in f['hidden'] if k not in values]+list(values.items())]+[f'--{boundary}--\r\n'.encode()]
  p=Page();p.feed(urlopen(Request(BASE+'/high5',data=b''.join(chunks),headers={'Origin':BASE,'Content-Type':'multipart/form-data; boundary='+boundary})).read().decode());return ' '.join(p.text)
-for path,expected in [('/high5','QUICK ACCOUNT UPDATE'),('/high5/experiment','EXPERIMENT'),('/','Reward currency and amount may vary')]:assert expected in ' '.join(get(path).text);print('PASS',path)
+for path,expected in [('/high5','QUICK ACCOUNT UPDATE'),('/high5/experiment','EXPERIMENT'),('/advanced/today','Reward currency and amount may vary')]:assert expected in ' '.join(get(path).text);print('PASS',path)
 pid=sql("SELECT id FROM platforms WHERE slug='high-5-casino'")
 sql(f'''INSERT INTO bankroll_accounts (id,"platformId",engine,demo,label,key) VALUES ('{account}','{pid}','CASINO',false,'Synthetic temporary High5 HTTP test','http-high5:{account}')''')
 try:

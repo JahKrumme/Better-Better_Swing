@@ -7,6 +7,7 @@ import {
   type PolicyEvidence,
   type Funding,
 } from "./operations";
+import { RealPrizeAdapter } from "./realprize-adapter";
 import { High5Adapter } from "./high5-adapter";
 export interface PlatformAdapter {
   platformId: string;
@@ -57,4 +58,10 @@ export function authorizeAutomatic(input: {
   )
     throw new Error("Action is not currently available.");
   return true;
+}
+
+export function registerRealPrizeAdapter(platformId: string) {
+  const a = new RealPrizeAdapter(platformId);
+  adapters.set(platformId, a);
+  return a;
 }

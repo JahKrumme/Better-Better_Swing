@@ -16,6 +16,7 @@ import {
   offers,
   platforms,
   high5Updates,
+  accountSnapshots,
 } from "./schema";
 import {
   actionStage,
@@ -296,6 +297,68 @@ export async function appendHigh5ObservationEvent(
     a,
     { ...input, observationId, sourceKind: "USER_OBSERVATION" },
     funding,
+    true,
+  );
+}
+// Manual consumer observations never execute gameplay or call a platform.
+export async function appendAccountObservationEvent(
+  tx: Tx,
+  a: Account,
+  input: EventInput,
+  snapshotId: string,
+) {
+  const [p] = await tx
+    .select()
+    .from(platforms)
+    .where(eq(platforms.id, a.platformId));
+  const [o] = await tx
+    .select()
+    .from(accountSnapshots)
+    .where(eq(accountSnapshots.id, snapshotId));
+  if (
+    a.demo ||
+    a.engine !== "CASINO" ||
+    !p ||
+    p.fixture ||
+    p.excluded ||
+    p.slug === "high-5-casino" ||
+    !o ||
+    o.accountId !== a.id ||
+    !o.payload.freeOnly
+  )
+    throw new Error("Real free-only account observation required.");
+  if (
+    input.currency === "GC" &&
+    (input.category !== "PROMOTIONAL" ||
+      !["FREE_REWARD_RECEIVED", "OBSERVATION_RECONCILIATION"].includes(
+        input.eventType,
+      ))
+  )
+    throw new Error(
+      "GC cannot be played as redeemable currency or redeemed for cash.",
+    );
+  if (
+    ["PROMOTIONAL_WAGER", "PROMOTIONAL_WIN", "PROMOTIONAL_LOSS"].includes(
+      input.eventType,
+    ) &&
+    o.operation !== "PLAY"
+  )
+    throw new Error("Already-performed manual play required.");
+  if (input.eventType === "FREE_REWARD_RECEIVED") {
+    const amount =
+      input.currency === "GC" ? o.payload.receivedGC : o.payload.received;
+    if (
+      o.payload.claimed !== "YES" ||
+      amount === null ||
+      cents(amount) !== cents(input.amount)
+    )
+      throw new Error("Actual claimed receipt required.");
+  }
+  return appendEvent(
+    tx,
+    a,
+    { ...input, sourceKind: "USER_OBSERVATION", observationId: null },
+    freeFunding,
     true,
   );
 }

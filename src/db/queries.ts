@@ -6,6 +6,7 @@ import {
   claims,
   redemptions,
   platformSources,
+  userSettings,
 } from "./schema";
 import { evaluateOfferEligibility } from "@/domain/eligibility";
 import { getProfile } from "@/domain/profile";
@@ -25,7 +26,8 @@ export async function loadData() {
     db.select().from(redemptions),
     db.select().from(platformSources),
   ]);
-  const profile = getProfile();
+  const savedProfile = (await db.select().from(userSettings))[0]?.profile;
+  const profile = { ...getProfile(), ...savedProfile };
   const now = new Date();
   const preparedPlatforms = ps.map((p) => {
     const ss = sources.filter((s) => s.platformId === p.id);

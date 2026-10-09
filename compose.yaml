@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: finder
       POSTGRES_PASSWORD: ${LOCAL_DB_PASSWORD:?Set LOCAL_DB_PASSWORD in .env}
     ports:
-      - "127.0.0.1:5432:5432"
+      - "127.0.0.1:${LOCAL_DB_PORT:-5432}:5432"
     volumes:
       - finder_pgdata:/var/lib/postgresql/data
     healthcheck:

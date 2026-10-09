@@ -1,5 +1,7 @@
 # Architecture — Phase 3
 
+Current consumer behavior and production local operations are documented in [Product completion](PRODUCT_COMPLETE.md) and [Local operations](LOCAL_OPERATIONS.md). Historical implementation sections below are retained for context.
+
 Retain Next.js App Router, strict TypeScript, PostgreSQL/Drizzle and the existing evidence-first eligibility domain. Two operational engines (CASINO and SPORTSBOOK) share guarded services but keep accounts, currencies, balances, tasks and analytics separate. Server components read local projections; validated server actions record manual facts or run an explicitly isolated simulation.
 
 `domain/operations.ts` holds exact monetary arithmetic, zero-money invariant, category transitions, policy decisions, strategy and risk controls. `domain/scheduler.ts` computes interval/calendar/custom windows. `domain/adapters.ts` defines capability-specific future adapters and execution-time authorization; its real registry is empty. `db/operations-service.ts` handles transactions, stable idempotency keys, account row locks, task re-evaluation, receipt imports, observations, strategy persistence and demo state transitions.
@@ -55,3 +57,7 @@ The existing adapter registry now registers a manual-only High5Adapter. `domain/
 Four additive tables retain ordered USER_OBSERVATION updates, account-scoped reward instances, reviewed public-source snapshots and manual redemption states. Ledger provenance links events to observations; signed OBSERVATION_RECONCILIATION events do not count as rewards or play returns. Redemption cancellation releases reservations; a single proceeds-fill event supports unknown completed proceeds without redeeming units twice. Existing legacy High 5 claims share the same receipt key; historical `SC (promotional)` is narrowly normalized to SC. All other platforms retain their existing unit behavior.
 
 An explicit Python stdlib fetcher reads six fixed official HTTPS public documents, within size/time/origin bounds. Critical changes set an eligibility review flag. The curated baseline and existing typed research/evidence workflow support deliberate manual re-verification; sync never clears flags or grants permissions. No worker, private scraper, credential store or new dependency is introduced. The existing demo and sportsbook remain separate. See [PHASE_4_HIGH5.md](PHASE_4_HIGH5.md).
+
+## Consumer runtime additions
+
+The existing ledger remains authoritative. product-service adds consumer projections, generic manual casino snapshots/redemptions, persisted checks and attention. Independent capability scopes now include AVAILABILITY and BALANCE alongside DISCOVERY/CLAIM/GAMEPLAY/REDEMPTION. A standalone worker owns a PostgreSQL advisory lock; manual/background checks share another. The production supervisor starts loopback Next plus the worker, preserves data and coordinates shutdown. Public captures are manual research and do not renew eligibility facts. See PRODUCT_COMPLETE.md and LOCAL_OPERATIONS.md.

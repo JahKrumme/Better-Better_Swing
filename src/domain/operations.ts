@@ -2,7 +2,14 @@ import { z } from "zod";
 
 export const engines = ["CASINO", "SPORTSBOOK"] as const;
 export type Engine = (typeof engines)[number];
-export const stages = ["DISCOVERY", "CLAIM", "GAMEPLAY", "REDEMPTION"] as const;
+export const stages = [
+  "DISCOVERY",
+  "AVAILABILITY",
+  "BALANCE",
+  "CLAIM",
+  "GAMEPLAY",
+  "REDEMPTION",
+] as const;
 export type Stage = (typeof stages)[number];
 export const actionTypes = [
   "CLAIM_REWARD",
